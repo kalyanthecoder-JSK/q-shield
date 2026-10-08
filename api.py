@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from qsheild_bb84 import run_bb84
+from qsheild_bb84 import simulate_bb84
 
 app = FastAPI(title="Q-SHIELD Qiskit API")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -16,4 +16,4 @@ def health():
 @app.get("/bb84")
 def bb84(eve: bool = False, n: int = 200):
     n = min(max(n, 20), 400)  # keep requests fast on free hosting
-    return run_bb84(n=n, eve=eve)
+    return simulate_bb84(n_bits=n,eve_present=eve)
