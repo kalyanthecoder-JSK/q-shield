@@ -2,3 +2,5 @@ qiskit
 qiskit-aer
 fastapi
 uvicorn
+flask
+cryptography
