@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from bb84 import run_bb84
+from qsheild_bb84 import run_bb84
 
 app = FastAPI(title="Q-SHIELD Qiskit API")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
